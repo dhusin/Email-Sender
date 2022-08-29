@@ -46,13 +46,14 @@ https://templatemo.com/tm-560-astro-motion
               </div> -->
               <div class="row">
                 <div class="col-md-12 tm-contact-left">
-                  <form action="#" method="POST" class="contact-form">
+                  <form action="{% url 'home'%}" method="POST" class="contact-form">
+                    {% csrf_token %}
                     <div class="input-group tm-mb-30">
                       <label>To</label>
-                      <input name="email" type="text" class="form-control rounded-0 border-top-0 border-end-0 border-start-0" >
+                      <input name="to" type="text" class="form-control rounded-0 border-top-0 border-end-0 border-start-0" >
                     </div>
                     <div class="input-group tm-mb-30">
-                      <input name="name" type="text" class="form-control rounded-0 border-top-0 border-end-0 border-start-0" placeholder="Subject">
+                      <input name="subject" type="text" class="form-control rounded-0 border-top-0 border-end-0 border-start-0" placeholder="Subject">
                     </div>                    
                     <div class="input-group tm-mb-30">
                         <textarea rows="5" name="message" class="textarea form-control rounded-0 border-top-0 border-end-0 border-start-0" placeholder="Message"></textarea>
@@ -64,22 +65,31 @@ https://templatemo.com/tm-560-astro-motion
                 </div>
                 
               </div>
-            </div>            
+            </div>  
+            
+            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+              <div class="toast-header">
+                <img src="..." class="rounded me-2" alt="...">
+                <strong class="me-auto">Bootstrap</strong>
+                <small class="text-muted">11 mins ago</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+              </div>
+              <div class="toast-body">
+                Hello, world! This is a toast message.
+              </div>
+            </div>
           
     </div>
     <div class="container-fluid">
       <footer class="row mx-auto tm-footer">
         <div class="col-md-6 px-0">
-          Copyright 2021 Astro Motion Company Limited. All rights reserved.
+          Copyright @ 2022. All rights reserved.
         </div>
-        <div class="col-md-6 px-0 tm-footer-right">
-          Designed by <a rel="sponsored" href="https://templatemo.com" target="_blank" class="tm-link-white">TemplateMo</a>
-        </div>
+        
       </footer>
     </div>
   </div>
   <!-- Preloader, https://ihatetomatoes.net/create-custom-preloading-screen/ -->
-  <div id="loader-wrapper">            
     <div id="loader"></div>
     <div class="loader-section section-left"></div>
     <div class="loader-section section-right"></div>
